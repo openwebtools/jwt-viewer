@@ -1,8 +1,8 @@
-import { Stack, Text, Textarea, VStack } from "@chakra-ui/react";
+import { Text, Textarea, VStack } from "@chakra-ui/react";
 import React from "react";
 import Layout from "../src/components/Layout";
 import jwt_decode from "jwt-decode";
-import JsonViewer from "../src/components/JsonViewer";
+import TokenBodyViewer from "../src/components/TokenBodyViewer";
 
 export default function Home() {
   const [token, setToken] = React.useState("");
@@ -42,28 +42,12 @@ export default function Home() {
           placeholder="Enter the encoded JSON Web Token"
           size="md"
         />
-        <Stack
-          direction={["column", "column", "row", "row"]}
-          w="100%"
-          h="100%"
-          pb={2}
-          spacing="30px"
-        >
-          <JsonViewer
-            title="Decoded Token Payload"
-            text={decodedTokenPayload}
-            h="100%"
-            w={["100%", "100%", "50%", "50%"]}
-          ></JsonViewer>
-          <VStack w={["100%", "100%", "50%", "50%"]} h="100%">
-            <JsonViewer
-              title="Decoded Token Header"
-              text={decodedTokenHeader}
-              h="auto"
-              w="100%"
-            ></JsonViewer>
-          </VStack>
-        </Stack>
+        {decodedTokenPayload ? (
+          <TokenBodyViewer
+            payload={decodedTokenPayload}
+            header={decodedTokenHeader}
+          />
+        ) : null}
       </VStack>
     </Layout>
   );
