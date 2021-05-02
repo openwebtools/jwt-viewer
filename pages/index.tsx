@@ -41,6 +41,7 @@ export default function Home() {
           onChange={handleTokenInputChange}
           placeholder="Enter the encoded JSON Web Token"
           size="md"
+          pb={4}
         />
         {decodedTokenPayload ? (
           <TokenBodyViewer

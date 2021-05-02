@@ -9,7 +9,7 @@ const TokenBodyViewer = (props: any) => {
       w="100%"
       h="100%"
       pb={2}
-      spacing="30px"
+      spacing={["40px", "40px", "20px", "20px"]}
     >
       <JsonViewer
         title="Decoded Token Payload"
