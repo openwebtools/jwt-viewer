@@ -8,7 +8,7 @@ const TokenBodyViewer = (props: any) => {
       direction={["column", "column", "row", "row"]}
       w="100%"
       h="100%"
-      pb={2}
+      pb={4}
       spacing={["40px", "40px", "20px", "20px"]}
     >
       <JsonViewer
