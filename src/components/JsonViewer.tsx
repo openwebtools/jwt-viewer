@@ -7,7 +7,7 @@ const JsonViewer = (props: any) => {
     <Box {...props}>
       <Flex justifyContent="space-between" pb={2}>
         <Text>{props.title}</Text>
-        <Button colorScheme="teal" size="xs" onClick={onCopy}>
+        <Button colorScheme="dark" size="xs" onClick={onCopy}>
           {hasCopied ? "Copied" : "Copy"}
         </Button>
       </Flex>
